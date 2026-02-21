@@ -75,14 +75,14 @@ social-network-links:
 
 # If you want your website to generate an RSS feed, provide a description
 # The URL for the feed will be https://<your_website>/feed.xml
-rss-description: This website is a virtual proof that I'm awesome
+rss-description: Machine learning systems, ML engineering, and reflections on building real-world ML systems
 
 ###########################
 # --- General options --- #
 ###########################
 
 # Select which social network share links to show in posts
-share-links-activMachine learning systems, ML engineering, and reflections on building real-world ML systems
+share-links-active:
   twitter: true
   facebook: true
   linkedin: true
