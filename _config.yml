@@ -48,12 +48,10 @@ round-avatar: true
 # You can change the order that they show up on the page by changing the order here.
 # Uncomment the links you want to show and add your information to each one.
 social-network-links:
-  email: "someone@example.com"
-  rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebookvaibhav.ahluwalia@email.com"
+  email: "waliava123@gmail.com"
   github: vaibhavahluwalia
   twitter: vaibhav_ahluwalia
-  linkedin: vaibhavahluwalia43160/daattali"
+  linkedin: vaibhavahluwalia
 #  snapchat: deanat78
 #  instagram: deanat78
 #  spotify: yourname
