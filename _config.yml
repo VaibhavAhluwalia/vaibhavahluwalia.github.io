@@ -10,21 +10,19 @@
 ############################
 
 # Name of website
-title: My website
+title: Vaibhav Ahluwalia
 
 # Your name to show in the footer
-author: Some Person
+author: Vaibhav Ahluwalia
 
 ###############################################
 # --- List of links in the navigation bar --- #
 ###############################################
 
 navbar-links:
-  About Me: "aboutme"
-  Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+  Blog: "blog"
+  About: "aboutme"
+  Contact: "contact"
 
 ################
 # --- Logo --- #
@@ -52,17 +50,10 @@ round-avatar: true
 social-network-links:
   email: "someone@example.com"
   rss: true  # remove this line if you don't want to show an RSS link at the bottom
-  facebook: deanattali
-  github: daattali
-  twitter: daattali
-  patreon: DeanAttali
-  youtube: "@daattali"
-  whatsapp: 15551212
-#  medium: yourname
-#  reddit: yourname or r/yoursubreddit
-#  linkedin: daattali
-#  xing: yourname
-#  stackoverflow: "3943160/daattali"
+  facebookvaibhav.ahluwalia@email.com"
+  github: vaibhavahluwalia
+  twitter: vaibhav_ahluwalia
+  linkedin: vaibhavahluwalia43160/daattali"
 #  snapchat: deanat78
 #  instagram: deanat78
 #  spotify: yourname
@@ -93,7 +84,7 @@ rss-description: This website is a virtual proof that I'm awesome
 ###########################
 
 # Select which social network share links to show in posts
-share-links-active:
+share-links-activMachine learning systems, ML engineering, and reflections on building real-world ML systems
   twitter: true
   facebook: true
   linkedin: true

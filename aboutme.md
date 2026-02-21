@@ -1,16 +1,16 @@
 ---
 layout: page
-title: About me
-subtitle: Why you'd want to go on a date with me
+title: About
 ---
 
-My name is Inigo Montoya. I have the following qualities:
+I'm Vaibhav Ahluwalia, a machine learning engineer guided by a deep interest in understanding how systems work in the real world. I'm drawn to careful learning and sustained thinking—exploring ideas from multiple angles and steadily refining the quality of my understanding.
 
-- I rock a great mustache
-- I'm extremely loyal to my family
+My work focuses on designing, deploying, and reasoning about machine learning systems that move beyond experimentation and into sustained use. I work across the lifecycle of ML systems—from modeling and feature design to system architecture and deployment—where performance, reliability, and practical constraints all matter.
 
-What else do you need?
+I'm particularly interested in problems where modeling choices interact closely with data, infrastructure, and product considerations. These intersections often shape how systems evolve over time and tend to have a greater impact than individual algorithms in isolation.
 
-### My story
+I spend much of my time reading and learning, and sometimes writing to organize my thoughts. Writing helps me think more clearly, explore ideas from different angles, and understand how concepts translate from controlled settings into real applications.
 
-To be honest, I'm having some trouble remembering right now, so why don't you just watch [my movie](https://en.wikipedia.org/wiki/The_Princess_Bride_%28film%29) and it will answer **all** your questions.
+I value thoughtful collaboration, careful engineering, and work that rewards long-term thinking. I enjoy staying inquisitive, learning continuously, and building with intention.
+
+If you're interested in machine learning systems or exploring ideas together, feel free to [reach out](/contact).
