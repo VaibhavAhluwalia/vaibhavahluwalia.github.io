@@ -1,0 +1,110 @@
+{
+  "series": {
+    "caching": {
+      "name": "Caching Strategies for LLM Systems",
+      "description": "Complete guide to caching techniques in LLM systems",
+      "color": "#0066cc"
+    }
+  },
+  "articles": [
+    {
+      "id": 1,
+      "title": "Caching Strategies for LLM Systems — Part 4: Grouped-Query Attention for Scalable, Efficient Transformers",
+      "excerpt": "Grouped-Query Attention (GQA) balances memory efficiency and expressive power, unlocking practical inference for billion-parameter models.",
+      "date": "2025-02-22",
+      "readingTime": "3 min",
+      "category": "LLM Systems",
+      "series": "caching",
+      "seriesPart": 4,
+      "tags": ["AI", "Machine Learning", "LLM", "NLP"],
+      "platforms": [
+        {
+          "name": "medium",
+          "url": "https://medium.com/@waliava123/caching-strategies-for-llm-systems-part-4-grouped-query-attention-for-scalable-efficient-ba3cff72fc8d"
+        },
+        {
+          "name": "devto",
+          "url": "https://dev.to/vaibhav_ahluwalia_b39a1b3/caching-strategies-for-llm-systems-part-4-grouped-query-attention-for-scalable-efficient-23h0"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Caching Strategies for LLM Systems (Part 3): Multi-Query Attention and Memory-Efficient Decoding",
+      "excerpt": "Explore how Multi-Query Attention transforms autoregressive decoding by eliminating redundant attention computation and reducing memory footprint.",
+      "date": "2025-02-08",
+      "readingTime": "5 min",
+      "category": "LLM Systems",
+      "series": "caching",
+      "seriesPart": 3,
+      "tags": ["AI", "Machine Learning", "LLM", "Optimization"],
+      "platforms": [
+        {
+          "name": "medium",
+          "url": "https://medium.com/@waliava123/caching-strategies-for-llm-systems-part-3-multi-query-attention-and-memory-efficient-decoding-53d4ef0f7cb2"
+        },
+        {
+          "name": "devto",
+          "url": "https://dev.to/vaibhav_ahluwalia_b39a1b3/caching-strategies-for-llm-systems-part-3-multi-query-attention-and-memory-efficient-decoding-32an"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Caching Strategies for LLM Systems (Part 2): KV Cache and the Mathematics of Fast Transformer Inference",
+      "excerpt": "Autoregressive decoding in transformers is computationally expensive. Learn how KV caching eliminates redundant computation.",
+      "date": "2025-01-21",
+      "readingTime": "6 min",
+      "category": "LLM Systems",
+      "series": "caching",
+      "seriesPart": 2,
+      "tags": ["AI", "Machine Learning", "Transformers", "Performance"],
+      "platforms": [
+        {
+          "name": "medium",
+          "url": "https://medium.com/@waliava123/caching-strategies-for-llm-systems-part-2-kv-cache-and-the-mathematics-of-fast-transformer-ebb4d75c862a"
+        },
+        {
+          "name": "devto",
+          "url": "https://dev.to/vaibhav_ahluwalia_b39a1b3/caching-strategies-for-llm-systems-part-2-kv-cache-and-the-mathematics-of-fast-transformer-4pfe"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Caching Techniques for LLM Applications — Part 1: Exact-Match & Semantic Caching",
+      "excerpt": "LLM calls are expensive. Caching is one of the most effective levers to reduce cost and speed up responses. Discover exact-match and semantic caching strategies.",
+      "date": "2025-01-17",
+      "readingTime": "7 min",
+      "category": "LLM Engineering",
+      "series": "caching",
+      "seriesPart": 1,
+      "tags": ["LLM", "Caching", "Optimization", "Engineering"],
+      "platforms": [
+        {
+          "name": "medium",
+          "url": "https://medium.com/@waliava123/caching-techniques-for-llm-applications-part-1-exact-match-semantic-caching-b17fb0e2bbff"
+        },
+        {
+          "name": "devto",
+          "url": "https://dev.to/vaibhav_ahluwalia_b39a1b3/caching-strategies-for-llm-systems-exact-match-semantic-caching-4a1j"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "Beyond Tokens: Introducing the Large Concept Model for Next-Generation Language Processing",
+      "excerpt": "From Tokenization to Conceptualization: Exploring the future of language models and how they might evolve beyond token-based processing.",
+      "date": "2025-01-05",
+      "readingTime": "8 min",
+      "category": "ML Research",
+      "tags": ["AI", "Language Models", "Innovation", "Research"],
+      "platforms": [
+        {
+          "name": "medium",
+          "url": "https://medium.com/@waliava123/beyond-tokens-introducing-the-large-concept-model-for-next-generation-language-processing-b7c0f17def5a"
+        }
+      ]
+    }
+  ]
+}

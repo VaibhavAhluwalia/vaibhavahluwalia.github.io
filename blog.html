@@ -5,6 +5,329 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Vaibhav Ahluwalia</title>
     <link rel="stylesheet" href="assets/css/styles.css">
+    <style>
+        /* Blog-specific styles */
+        .blog-header {
+            margin-bottom: 3rem;
+        }
+
+        .blog-header p {
+            font-size: 1.05rem;
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .blog-filters {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            color: #333;
+            transition: all 0.2s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: #0066cc;
+            color: #fff;
+            border-color: #0066cc;
+        }
+
+        /* Series Folder Style */
+        .series-folder {
+            margin-bottom: 3rem;
+            border: 2px solid #f0f0f0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #fafafa;
+        }
+
+        .series-header {
+            background: linear-gradient(135deg, #0066cc, #0052a3);
+            color: #fff;
+            padding: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: all 0.2s ease;
+        }
+
+        .series-header:hover {
+            background: linear-gradient(135deg, #0052a3, #003d7a);
+            padding-left: 2rem;
+        }
+
+        .series-header h2 {
+            margin: 0;
+            font-size: 1.3rem;
+            color: #fff;
+        }
+
+        .series-header p {
+            margin: 0.5rem 0 0 0;
+            font-size: 0.95rem;
+            opacity: 0.9;
+            color: #fff;
+        }
+
+        .series-toggle {
+            font-size: 1.5rem;
+            transition: transform 0.2s ease;
+        }
+
+        .series-toggle.open {
+            transform: rotate(180deg);
+        }
+
+        .series-content {
+            padding: 2rem;
+            display: none;
+        }
+
+        .series-content.open {
+            display: block;
+        }
+
+        .series-parts {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .series-part {
+            background: white;
+            border-left: 4px solid #0066cc;
+            padding: 1.5rem;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .series-part:hover {
+            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.15);
+            border-left-color: #0052a3;
+        }
+
+        .series-part-badge {
+            display: inline-block;
+            background: #0066cc;
+            color: #fff;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .series-part h3 {
+            margin: 0.5rem 0;
+            font-size: 1.2rem;
+        }
+
+        .series-part h3 a {
+            color: #0066cc;
+            border-bottom: 1px solid #0066cc;
+        }
+
+        .series-part h3 a:hover {
+            color: #0052a3;
+            border-bottom: 1px solid #0052a3;
+        }
+
+        .featured-post {
+            background: #f9f9f9;
+            border: 1px solid #eee;
+            border-left: 4px solid #0066cc;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border-radius: 4px;
+        }
+
+        .featured-post .badge {
+            display: inline-block;
+            background: #0066cc;
+            color: #fff;
+            padding: 0.3rem 0.7rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-post h2 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+        .featured-post h2 a {
+            color: #0066cc;
+            border-bottom: 1px solid #0066cc;
+        }
+
+        .featured-post h2 a:hover {
+            color: #0052a3;
+            border-bottom: 1px solid #0052a3;
+        }
+
+        .post-meta {
+            display: flex;
+            gap: 1.5rem;
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .post-meta span {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
+        .post-tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .post-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .post-tag:hover {
+            background: #e0e0e0;
+        }
+
+        .post-tag.active {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        .blog-posts {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .blog-post {
+            padding: 1.5rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            transition: all 0.2s ease;
+        }
+
+        .blog-post:hover {
+            border-color: #0066cc;
+            box-shadow: 0 2px 8px rgba(0, 102, 204, 0.1);
+        }
+
+        .blog-post h3 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.3rem;
+        }
+
+        .blog-post h3 a {
+            color: #0066cc;
+            border-bottom: 1px solid #0066cc;
+        }
+
+        .blog-post h3 a:hover {
+            color: #0052a3;
+            border-bottom: 1px solid #0052a3;
+        }
+
+        .blog-post .excerpt {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .post-platform {
+            display: inline-block;
+            padding: 0.3rem 0.7rem;
+            border-radius: 3px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-right: 1rem;
+        }
+
+        .post-platform.medium {
+            background: #000;
+            color: #fff;
+        }
+
+        .post-platform.devto {
+            background: #000;
+            color: #fff;
+        }
+
+        .post-platform.personal {
+            background: #0066cc;
+            color: #fff;
+        }
+
+        .read-more {
+            color: #0066cc;
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid #0066cc;
+        }
+
+        .read-more:hover {
+            color: #0052a3;
+            border-bottom: 1px solid #0052a3;
+        }
+
+        .no-results {
+            text-align: center;
+            color: #999;
+            padding: 2rem;
+        }
+
+        .platform-icons {
+            display: flex;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .platform-icon {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem 1rem;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #333;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .platform-icon:hover {
+            background: #f9f9f9;
+            border-color: #0066cc;
+        }
+    </style>
 </head>
 <body>
     <!-- Navigation -->
@@ -20,21 +343,32 @@
 
     <!-- Main Content -->
     <div class="page-content">
-        <h1>Blog</h1>
-        
-        <p>Thoughts on machine learning systems, system design, and building in production.</p>
+        <div class="blog-header">
+            <h1>Blog</h1>
+            <p>Deep dives into machine learning systems, LLM engineering, caching strategies, and building scalable AI applications.</p>
+        </div>
 
-        <div class="blog-posts">
-            <!-- Your blog posts will go here -->
-            <!-- Example format:
-            <article class="blog-post">
-                <h2><a href="posts/your-post-slug.html">Your Blog Post Title</a></h2>
-                <p class="post-date">February 21, 2026</p>
-                <p class="post-excerpt">Brief summary of your post...</p>
-            </article>
-            -->
-            
-            <p style="color: #999; margin-top: 3rem;">Coming soon. Check back for articles on ML systems, engineering practices, and real-world applications.</p>
+        <!-- Filter Tags -->
+        <div class="blog-filters">
+            <button class="filter-btn active" onclick="filterBySeries('all')">All Articles</button>
+            <button class="filter-btn" onclick="filterBySeries('caching')">Caching Series</button>
+            <button class="filter-btn" onclick="filterBySeries('other')">Other Articles</button>
+        </div>
+
+        <!-- Series Sections -->
+        <div id="series-container"></div>
+
+        <!-- Platform Links -->
+        <div class="platform-icons">
+            <a href="https://medium.com/@waliava123" class="platform-icon" target="_blank">
+                📰 Medium
+            </a>
+            <a href="https://dev.to/vaibhav_ahluwalia_b39a1b3" class="platform-icon" target="_blank">
+                💻 Dev.to
+            </a>
+            <a href="https://medium.com/@waliava123/feed" class="platform-icon" target="_blank">
+                📡 RSS Feed
+            </a>
         </div>
     </div>
 
@@ -48,5 +382,146 @@
         </p>
         <p>Thoughts on ML systems and engineering</p>
     </footer>
+
+    <script>
+        let allArticles = [];
+        let allSeries = {};
+        let currentFilter = 'all';
+
+        // Load articles from JSON
+        async function loadArticles() {
+            try {
+                const response = await fetch('/assets/data/articles.json');
+                const jsonData = await response.json();
+                allArticles = jsonData.articles.sort((a, b) => new Date(b.date) - new Date(a.date));
+                allSeries = jsonData.series;
+                renderSeries();
+            } catch (error) {
+                console.error('Error loading articles:', error);
+                document.getElementById('series-container').innerHTML = 
+                    '<p class="no-results">Unable to load articles. Please try again later.</p>';
+            }
+        }
+
+        function formatDate(dateString) {
+            const options = { year: 'numeric', month: 'long', day: 'numeric' };
+            return new Date(dateString).toLocaleDateString('en-US', options);
+        }
+
+        function getPlatformBadge(platform) {
+            const badges = {
+                medium: '📰 Medium',
+                devto: '💻 Dev.to'
+            };
+            return badges[platform] || platform;
+        }
+
+        function renderSeries() {
+            const container = document.getElementById('series-container');
+            let html = '';
+
+            // Show series
+            if (currentFilter === 'all' || currentFilter === 'caching') {
+                const cachingArticles = allArticles.filter(a => a.series === 'caching').sort((a, b) => b.seriesPart - a.seriesPart);
+                if (cachingArticles.length > 0) {
+                    html += `
+                        <div class="series-folder">
+                            <div class="series-header" onclick="toggleSeries('caching')">
+                                <div>
+                                    <h2>Caching Strategies for LLM Systems</h2>
+                                    <p>Complete guide to caching techniques in LLM systems • ${cachingArticles.length} parts</p>
+                                </div>
+                                <div class="series-toggle open" id="caching-toggle">▼</div>
+                            </div>
+                            <div class="series-content open" id="caching-content">
+                                <div class="series-parts">
+                                    ${cachingArticles.map(article => {
+                                        const platformLinks = article.platforms.map(p => 
+                                            `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="platform-icon" style="display: inline-block; margin-right: 0.5rem;">${getPlatformBadge(p.name)}</a>`
+                                        ).join('');
+                                        return `
+                                            <div class="series-part">
+                                                <span class="series-part-badge">Part ${article.seriesPart}</span>
+                                                <h3><a href="${article.platforms[0].url}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
+                                                <div class="post-meta">
+                                                    <span>📅 ${formatDate(article.date)}</span>
+                                                    <span>⏱️ ${article.readingTime}</span>
+                                                </div>
+                                                <p class="excerpt">${article.excerpt}</p>
+                                                <div>${platformLinks}</div>
+                                            </div>
+                                        `;
+                                    }).join('')}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                }
+            }
+
+            // Show other articles
+            if (currentFilter === 'all' || currentFilter === 'other') {
+                const otherArticles = allArticles.filter(a => !a.series);
+                if (otherArticles.length > 0) {
+                    html += `
+                        <div class="blog-posts">
+                            ${otherArticles.map(article => {
+                                const platformLinks = article.platforms.map(p => 
+                                    `<a href="${p.url}" target="_blank" rel="noopener noreferrer" class="platform-icon" style="display: inline-block;">${getPlatformBadge(p.name)}</a>`
+                                ).join(' ');
+                                return `
+                                    <article class="blog-post">
+                                        <h3><a href="${article.platforms[0].url}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
+                                        <div class="post-meta">
+                                            <span>📅 ${formatDate(article.date)}</span>
+                                            <span>⏱️ ${article.readingTime}</span>
+                                        </div>
+                                        <p class="excerpt">${article.excerpt}</p>
+                                        <div class="post-tags">
+                                            ${article.tags.map(tag => `<span class="post-tag">${tag}</span>`).join('')}
+                                        </div>
+                                        <div style="margin-top: 1rem;">
+                                            ${platformLinks}
+                                        </div>
+                                    </article>
+                                `;
+                            }).join('')}
+                        </div>
+                    `;
+                }
+            }
+
+            if (html === '') {
+                html = '<p class="no-results">No articles found in this section.</p>';
+            }
+
+            container.innerHTML = html;
+        }
+
+        function toggleSeries(seriesId) {
+            const toggle = document.getElementById(seriesId + '-toggle');
+            const content = document.getElementById(seriesId + '-content');
+            
+            toggle.classList.toggle('open');
+            content.classList.toggle('open');
+        }
+
+        function filterBySeries(filter) {
+            currentFilter = filter;
+            
+            // Update button states
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            renderSeries();
+        }
+
+        // Load articles on page load
+        document.addEventListener('DOMContentLoaded', loadArticles);
+    </script>
+</body>
+</html>
 </body>
 </html>
